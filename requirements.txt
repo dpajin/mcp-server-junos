@@ -1,0 +1,4 @@
+junos-eznc
+fastmcp
+PyYAML
+lxml

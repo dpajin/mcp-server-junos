@@ -1,0 +1,7 @@
+.venv
+.vscode
+__pycache__/
+*.pyc
+test*
+config.yml
+*.log
