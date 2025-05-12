@@ -1,7 +1,16 @@
-.venv
-.vscode
+# Python-generated files
 __pycache__/
-*.pyc
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# other 
+.vscode
 test*
 config.yml
 *.log
