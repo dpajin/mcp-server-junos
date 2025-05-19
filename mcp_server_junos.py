@@ -191,7 +191,7 @@ def main():
     host = os.getenv("MCP_SERVER_JUNOS_HOST", config_host)
     
     # By default, the server will use SSE transport
-    config_transport = "sse" if not config.get("global", None) else config["global"].get("server_transport", "sse")
+    config_transport = "streamable-http" if not config.get("global", None) else config["global"].get("server_transport", "streamable-http")
     transport = os.getenv("MCP_SERVER_JUNOS_TRANSPORT", config_transport)
 
     log.info(f"Starting MCP server for Junos devices on host {host}, port {port}...")

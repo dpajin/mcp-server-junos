@@ -2,7 +2,7 @@ global:
   server_host: 127.0.0.1
   server_port: 10008
   # Possible values: "streamable-http", "sse"
-  server_transport: "sse"
+  server_transport: "streamable-http"
 
 access:
   default:

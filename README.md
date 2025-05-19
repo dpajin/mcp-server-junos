@@ -70,7 +70,7 @@ global:
   server_host: 127.0.0.1
   server_port: 10008
   # Possible values: "sse" or "streamable-http"
-  server_transport: "sse"
+  server_transport: "streamable-http"
 ```
 
 **Using Environment variables:**
@@ -78,7 +78,7 @@ global:
 ```
 MCP_SERVER_JUNOS_HOST="127.0.0.1"
 MCP_SERVER_JUNOS_PORT=10008
-MCP_SERVER_JUNOS_TRANSPORT="sse"
+MCP_SERVER_JUNOS_TRANSPORT="streamable-http"
 LOG_LEVEL="INFO"
 ```
 
@@ -155,7 +155,8 @@ python mcp_server_junos.py
 ```
 
 - The MCP server exposes HTTP SSE interface on configurable port (default 10008) and IPs
-- The URL for connecting to MCP SSE server locally would be: `http://127.0.0.1:10008/sse`
+- The URL for connecting locally to MCP server over transport SSE would be: `http://127.0.0.1:10008/sse`
+- The URL for connecting locally to MCP server over transport Streamable HTTP would be: `http://127.0.0.1:10008/mcp/`
 
 ### Running as a docker container
 
@@ -172,16 +173,17 @@ docker run -d \
   -e MCP_SERVER_JUNOS_ACCESS_DEFAULT_PORT=830 \
   -e MCP_SERVER_JUNOS_HOST="127.0.0.1" \
   -e MCP_SERVER_JUNOS_PORT=10008 \
-  -e MCP_SERVER_JUNOS_TRANSPORT="sse" \
+  -e MCP_SERVER_JUNOS_TRANSPORT="streamable-http" \
   mcp-server-junos:latest
 ```
 ## Tests
 
-Tested with Github Copilot and VS Code as MCP client using HTTP SSE. 
+Tested with Github Copilot and VS Code (v1.100.2) as MCP client using Streamable HTTP and SSE. 
 - various show commands
 - basic device configuration
 - ping between devices
 
+NOTE: Streamable HTTP transport for MCP servers in VS Code is supported from v1.100. Older versions support SSE transport. 
 
 ## License
 The project is licensed under the MIT License.
