@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/dpajin-mcp-server-junos-badge.png)](https://mseep.ai/app/dpajin-mcp-server-junos)
+
 # Junos MCP Server (mcp-server-junos)
 
 ## Overview
